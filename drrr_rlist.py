@@ -31,8 +31,14 @@ def refresh():
 
     I = itertools.cycle(['Room:', 'Host:', 'Load:'])
 
+    c = 0
     for (i, j) in zip(I, S):
-        print(i, j[0])
+        c += 1
+        if c % 3:
+            print(i, j[0], end=' ')
+        else:
+            c = 0
+            print(i, j[0])
 
 refresh()
 while True:
